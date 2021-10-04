@@ -39,11 +39,10 @@ def main():
         if data is not None:
             df = pd.read_csv(data)
             st.dataframe(df.head())
-
+            all_cols = df.columns.to_list()
             if st.checkbox("Show Shape"):
                 st.write(df.shape)
             if st.checkbox("Show Columns"):
-                all_cols = df.columns.to_list()
                 st.write(all_cols)
             if st.checkbox("Select Columns to Display"):
                 selected_cols = st.multiselect("Select Columns", all_cols)
